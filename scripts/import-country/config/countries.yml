@@ -1,0 +1,35 @@
+algeria:
+  continent: africa
+  boundary_name: Algeria
+
+germany:
+  continent: europe
+  boundary_name: Germany
+
+france:
+  continent: europe
+  boundary_name: France
+
+spain:
+  continent: europe
+  boundary_name: Spain
+
+italy:
+  continent: europe
+  boundary_name: Italy
+
+turkey:
+  continent: europe
+  boundary_name: Turkey
+
+united-kingdom:
+  continent: europe
+  boundary_name: United Kingdom
+
+saudi-arabia:
+  continent: asia
+  boundary_name: Saudi Arabia
+
+united-arab-emirates:
+  continent: asia
+  boundary_name: United Arab Emirates

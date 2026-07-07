@@ -1,0 +1,14 @@
+[
+  {
+    "code": "DZ",
+    "schema": "algeria",
+    "pbf": "/opt/speedlimit/osm/algeria/algeria-latest.osm.pbf",
+    "url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf"
+  },
+  {
+    "code": "DE",
+    "schema": "germany",
+    "pbf": "/opt/speedlimit/osm/germany/germany-latest.osm.pbf",
+    "url": "https://download.geofabrik.de/europe/germany-latest.osm.pbf"
+  }
+]

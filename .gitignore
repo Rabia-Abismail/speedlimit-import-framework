@@ -1,0 +1,34 @@
+# Logs
+logs/
+*.log
+
+# OSM data
+osm/
+
+# Database backups
+backup-files/
+*.dump
+*.dump.gz
+*.sql.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.swp
+
+# SSL
+ssl/
+*.crt
+*.key
