@@ -229,24 +229,23 @@ create_schema() {
 
 import_country() {
 
-    echo ""
-#    COUNTRY="$1"
-#
-#    FILE="$OSM_DIR/$COUNTRY/${COUNTRY}-latest.osm.pbf"
-#
-#    log "Importing $COUNTRY"
-#
-#    export PGHOST=localhost
-#    export PGUSER=speedlimit
-#
-#    osm2pgsql \
-#        --create \
-#        --slim \
-#        --output=flex \
-#        --style="$STYLE_FILE" \
-#        --schema="$COUNTRY" \
-#        --database="$DATABASE" \
-#        "$FILE"
+    COUNTRY="$1"
+
+    FILE="$OSM_DIR/$COUNTRY/${COUNTRY}-latest.osm.pbf"
+
+    log "Importing $COUNTRY"
+
+    export PGHOST=localhost
+    export PGUSER=speedlimit
+
+    osm2pgsql \
+        --create \
+        --slim \
+        --output=flex \
+        --style="$STYLE_FILE" \
+        --schema="$COUNTRY" \
+        --database="$DATABASE" \
+        "$FILE"
 
 }
 
