@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 import logging
 
 from api.cache import redis_client, get, set
@@ -7,9 +7,11 @@ from api.models import SpeedLimitResponse
 from api.queries import GET_SPEED_LIMIT
 
 app = FastAPI(title="SpeedLimit API")
+#app = FastAPI(title="SpeedLimit API", root_path="/api")
+api_router = APIRouter(prefix="/api/speedlimit")
 
 
-@app.get("/health")
+@api_router.get("/health")
 def health():
     with pool.connection() as conn:
         with conn.cursor() as cur:
@@ -18,8 +20,8 @@ def health():
     return {"status": "ok"}
 
 
-@app.get(
-    "/speedlimit",
+@api_router.get(
+    "/get",
     response_model=SpeedLimitResponse,
 )
 def speedlimit(lat: float, lon: float):
@@ -90,7 +92,7 @@ def speedlimit(lat: float, lon: float):
     return result
 
 
-@app.get("/cache/stats")
+@api_router.get("/cache/stats")
 def cache_stats():
 
     info = redis_client.info()
@@ -103,7 +105,7 @@ def cache_stats():
     }
 
 
-@app.get("/cache/status")
+@api_router.get("/cache/status")
 def cache_status():
     try:
         redis_client.ping()
@@ -115,3 +117,6 @@ def cache_status():
             "status": "down",
             "error": str(e),
         }
+
+
+app.include_router(api_router)
